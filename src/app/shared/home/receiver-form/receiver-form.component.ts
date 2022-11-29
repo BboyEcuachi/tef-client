@@ -39,7 +39,7 @@ export class ReceiverFormComponent implements OnInit {
   onSubmit() {
     const data = this.receiverForm.getRawValue();
     this.apiService.registerReceiver(data).pipe(first()).subscribe(data => {
-      console.log(data);
+      //console.log(data);
     })
   }
 }

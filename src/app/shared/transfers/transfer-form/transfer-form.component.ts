@@ -30,7 +30,7 @@ export class TransferFormComponent {
     const data = this.transferForm.getRawValue();
     data.receiver = this.receivers.filter((r) => data.receiver == r.account)[0];    
     this.apiService.sendTransfer(data).pipe(first()).subscribe(data => {
-      console.log(data);
+      //console.log(data);
     });;
   }
 }
