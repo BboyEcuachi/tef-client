@@ -1,0 +1,21 @@
+{
+  "/api/listado_banco": {
+    "target": "https://listadobancos.herokuapp.com/",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/api/": {
+    "target": "http://localhost:3000/",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/auth": {
+    "target": "http://localhost:3000/auth/",
+    "secure": false,
+    "pathRewrite": {
+      "^/auth": ""
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class="container">
+  <h3> Crear Destinatario </h3>
+  <form [formGroup]="receiverForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Rut</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="rut" formControlName="rut" placeholder="Rut">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="name" formControlName="name" placeholder="Nombre">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Correo</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="email" id="email" formControlName="email" placeholder="Correo">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Teléfono</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="phone" formControlName="phone" placeholder="Teléfono">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Cuenta</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="number" id="account" formControlName="account" placeholder="Cuenta">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Banco Destino</label>
+      <div class="col-sm-10" *ngIf="banks.length > 0">
+        <select class="custom-select" formControlName="bank" id="bank">
+          <option *ngFor="let b of banks" [value]="b.nombre">{{b.nombre}}</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" [disabled]="receiverForm.invalid"> Registrar Destinatario </button>
+      </div>
+    </div>
+  </form>
+</div>
